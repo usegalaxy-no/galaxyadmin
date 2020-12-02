@@ -1,7 +1,7 @@
 # Testing Checklist
 
 This is the official checklist template for upgrading UseGalaxy.no to new releases. 
-When an upgrade is to be performed, create a new issue in the issue tracker and copy/paste the relevant tests from this list into that issue.
+When an upgrade is to be performed, create a new issue in the issue tracker and copy/paste the relevant tests from this list into that issue (in raw markdown code).
 
 ### Looks and auth
 - [ ] Use the API to check that you now have the correct and expected version  https://(test.)usegalaxy.no/api/version
