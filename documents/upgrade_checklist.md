@@ -30,12 +30,21 @@ When an upgrade is to be performed, create a new issue in the issue tracker and 
 - [ ] Test Trackster visualization
 - [ ] Test a Display Application (if configured), e.g. “UCSC Genome Browser”
 
+### New stuff v20.01
+- [ ] workflow documentation. When it has finished, select “Workflow Invocations” from the “User” menu. Choose a workflow invocation and press the V-button to expand it. Press the “View Invocation Report” link below the two colored bars (not the printer icon!).
+
 ### New stuff v20.09
 - [ ] Allow uploading directly from the tool form
 - [ ] Workflow import from GA4GH TRS servers
 
-### New stuff v20.01
-- [ ] workflow documentation. When it has finished, select “Workflow Invocations” from the “User” menu. Choose a workflow invocation and press the   V  -button to expand it. Press the “View Invocation Report” link below the two colored bars (not the printer icon!).
+### New stuff v21.01
+- [ ] Workflow invocation details. After a workflow has been run, select “Workflow Invocations” from the “User” menu and click on the workflow name to show details.
+- [ ] Workflow author and license metadata annotations in the workflow editor
+- [ ] Workflow "Best Practices". Lint a workflow by selecting "Best Practices" from the cogwheel menu in the workflow editor
+- [ ] Workflow Reports (with visualizations!). Create a report template in the workflow editor and view the report after running the WF.
+- [ ] See the disc usage for users on the Admin page
+- [ ] Galaxy Training Materials button in the masthead
+- [ ] Beta history panel
 
 ### Old tests that may be relevant again in the future
 - [ ] Click on the “Help” button on “run workflow” page and check if this takes you to a Galaxy page with instructions for the workflow (or to a page that says “Workflow Instructions. ERROR: Unknown NeLS pipeline: xxxx”)
