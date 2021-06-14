@@ -3,6 +3,15 @@
 This is the official checklist template for upgrading UseGalaxy.no to new releases. 
 When an upgrade is to be performed, create a new issue in the issue tracker and copy/paste the relevant tests from this list into that issue (in raw markdown code).
 
+### Updates to custom modified Galaxy files
+
+- [ ] The following three Galaxy code files (plus one style file) are replaced with our own custom modified copies in the playbooks. We must check if any of these have been updated since the previous Galaxy release, and if so, we should merge the new changes into our own copies.
+
+* client/src/mvc/history/options-menu.js
+* client/src/components/login/Login.vue
+* lib/galaxy/authnz/psa_authnz.py
+* client/src/style/scss/theme/blue.scss
+
 ### Looks and auth
 - [ ] Use the API to check that you now have the correct and expected version  https://(test.)usegalaxy.no/api/version
 - [ ] Check that the styling is correct and looks like this example (example to be updated?)
