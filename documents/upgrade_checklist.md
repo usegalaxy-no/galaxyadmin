@@ -3,6 +3,10 @@
 This is the official checklist template for upgrading UseGalaxy.no to new releases. 
 When an upgrade is to be performed, create a new issue in the issue tracker and copy/paste the relevant tests from this list into that issue (in raw markdown code).
 
+### Updates to Galaxy configuration files
+
+- [ ] Check if any new Galaxy configuration files have been introduced and if there have been updates to existing configuration files, especially "galaxy.yml" and "datatypes_conf.xml"
+
 ### Updates to custom modified Galaxy files
 
 - [ ] The following three Galaxy code files (plus one style file) are replaced with our own custom modified copies in the playbooks. We must check if any of these have been updated since the previous Galaxy release, and if so, we should merge the new changes into our own copies.
