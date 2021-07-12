@@ -59,6 +59,13 @@ When an upgrade is to be performed, create a new issue in the issue tracker and 
 - [ ] Galaxy Training Materials button in the masthead
 - [ ] Beta history panel
 
+### New stuff v21.05
+- [ ] Pluggable Data Sources:
+  - [ ] Import a file from a configured FTP server
+  - [ ] Import a file from your personal DropBox account (configure it first under User => Preferences => Manage information)
+  - [ ] Export a history to your personal DropBox account
+  - [ ] Import a history from your personal DropBox account
+
 ### Old tests that may be relevant again in the future
 - [ ] Click on the “Help” button on “run workflow” page and check if this takes you to a Galaxy page with instructions for the workflow (or to a page that says “Workflow Instructions. ERROR: Unknown NeLS pipeline: xxxx”)
 - [ ] Run a Data Manager (admin page)
