@@ -33,8 +33,8 @@ When an upgrade is to be performed, create a new issue in the issue tracker and 
 - [ ] Import a single file from the NeLS Storage (and display it!) 
 - [ ] Import multiple files from the NeLS Storage in a single operation (and display them!)
 - [ ] Export one or more files to the NeLS Storage
-- [ ] Test a history export from Galaxy to NeLS
-- [ ] Test a history import from NeLS to Galaxy
+- [ ] Test a history export from Galaxy to NeLS Storage
+- [ ] Test a history import from NeLS Storage to Galaxy
 - [ ] Run a tool that comes bundled with Galaxy (e.g. "replace text")
 - [ ] Run a tool that was installed from a tool shed
 - [ ] Run a tool that uses a reference dataset (e.g. bwa-mem)
@@ -42,6 +42,11 @@ When an upgrade is to be performed, create a new issue in the issue tracker and 
 - [ ] Test a Visualization plugin (if configured), e.g. “Charts” (example of a tool that typically would produce outputs ready for Charts to visualize?)
 - [ ] Test Trackster visualization
 - [ ] Test a Display Application (if configured), e.g. “UCSC Genome Browser”
+- [ ]  History import from another Galaxy server to UseGalaxy.no via link 
+- [ ]  History export from UseGalaxy.no to another Galaxy server via link 
+- [ ]  History import from file
+- [ ]  History export to file
+- [ ]  Test the "bug report" function and verify that the email is sent to a sensible recipient
 
 ### New stuff v20.01
 - [ ] workflow documentation. When it has finished, select “Workflow Invocations” from the “User” menu. Choose a workflow invocation and press the V-button to expand it. Press the “View Invocation Report” link below the two colored bars (not the printer icon!).
