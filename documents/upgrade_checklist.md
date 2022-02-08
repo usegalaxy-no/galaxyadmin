@@ -43,10 +43,11 @@ When an upgrade is to be performed, create a new issue in the issue tracker and 
 - [ ] Test Trackster visualization
 - [ ] Test a Display Application (if configured), e.g. “UCSC Genome Browser”
 - [ ]  History import from another Galaxy server to UseGalaxy.no via link 
-- [ ]  History export from UseGalaxy.no to another Galaxy server via link 
+- [ ]  ~~History export from UseGalaxy.no to another Galaxy server via link   (this currently does not work)
 - [ ]  History import from file
 - [ ]  History export to file
-- [ ]  Test the "bug report" function and verify that the email is sent to a sensible recipient
+- [ ]  Test the "bug report" function and verify that the email is sent to a sensible recipient (usegalaxy@usegalaxy.no)
+- [ ]  Run a Data Manager (admin page)
 
 ### New stuff v20.01
 - [ ] workflow documentation. When it has finished, select “Workflow Invocations” from the “User” menu. Choose a workflow invocation and press the V-button to expand it. Press the “View Invocation Report” link below the two colored bars (not the printer icon!).
@@ -71,6 +72,16 @@ When an upgrade is to be performed, create a new issue in the issue tracker and 
   - [ ] Export a history to your personal DropBox account
   - [ ] Import a history from your personal DropBox account
 
+### New stuff v21.09
+- [ ] Tool Panel Views
+- [ ] News webhook (bell icon in masthead menu)
+
+### NeLS Storage plugin
+- [ ] Import files from NeLS Storage with the "Upload Data" tool ("Choose remote files")
+- [ ] Export files to NeLS Storage using the "__Export datasets__ to remote files source" tool under Send Data
+- [ ] Import history from NeLS Storage (remote file) by clicking on "Import history" on the user's Saved Histories page
+- [ ] Export history to NeLS Storage (remote file) by selecting "Export History to File" from the history options menu (cogwheel button in history panel)
+
 ### Old tests that may be relevant again in the future
 - [ ] Click on the “Help” button on “run workflow” page and check if this takes you to a Galaxy page with instructions for the workflow (or to a page that says “Workflow Instructions. ERROR: Unknown NeLS pipeline: xxxx”)
-- [ ] Run a Data Manager (admin page)
+
