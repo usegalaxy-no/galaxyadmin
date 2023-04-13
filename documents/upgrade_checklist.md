@@ -16,6 +16,11 @@ When an upgrade is to be performed, create a new issue in the issue tracker and 
 * lib/galaxy/authnz/psa_authnz.py
 * client/src/style/scss/theme/blue.scss
 
+### Updates to Galaxy package dependencies
+
+- [ ] The requirements for our [default Singularity container](https://github.com/usegalaxy-no/infrastructure-playbook/blob/master/env/common/files/galaxy/mulled/default-container/requirements.txt) is based on the [requirements for Galaxy](https://github.com/galaxyproject/galaxy/tree/master/lib/galaxy/dependencies) itself (especially the [pinned-requirements.txt](https://github.com/galaxyproject/galaxy/blob/master/lib/galaxy/dependencies/pinned-requirements.txt) and [conditional-requirements.txt](https://github.com/galaxyproject/galaxy/blob/master/lib/galaxy/dependencies/conditional-requirements.txt)). If these are out of sync, it can cause problems for some bundled tools. Check if the requirements for the container needs to be updated, and, if so, recreate the default container image also.
+
+
 ### Looks and auth
 - [ ] Use the API to check that you now have the correct and expected version  https://(test.)usegalaxy.no/api/version
 - [ ] Check that the styling is correct and looks like this example (example to be updated?)
