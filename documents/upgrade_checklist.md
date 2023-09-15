@@ -31,6 +31,7 @@ When an upgrade is to be performed, create a new issue in the issue tracker and 
 ### Links 
 - [ ] Check that the Help menu includes a link to "Support" and that this link takes you to the help desk web page at https://elixir.no/helpdesk
 - [ ] Check that the Help menu includes a link to "Terms & conditions" and that this link brings up the terms of service document in the middle panel
+- [ ] Check that the "See the Galaxy release notes" bell-button in the masthead displays the release notes for the Galaxy version that is installed
 - [ ] ~~Check that the “Galaxy Support” link in the Help menu takes you to https://galaxyproject.org/support~~
 
 ### Basic operations
