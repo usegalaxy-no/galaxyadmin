@@ -3,91 +3,93 @@
 This is the official checklist template for upgrading UseGalaxy.no to new releases. 
 When an upgrade is to be performed, create a new issue in the issue tracker and copy/paste the relevant tests from this list into that issue (in raw markdown code).
 
-### Updates to Galaxy configuration files
+### After upgrade
+- [ ] Login to the server and run `sudo systemctl status` to check that all the services are up and running correctly under "system.slice" (not under "user.slice")
+- [ ] Login to the server and run `ps -eo pid,user,cmd` to check that the services are owned by the correct OS user ("galaxy")
+- [ ] Use this API call in a web brower to check that you now have the correct and expected Galaxy version https://usegalaxy.no/api/version 
 
-- [ ] Check if any new Galaxy configuration files have been introduced and if there have been updates to existing configuration files, especially "galaxy.yml" and "datatypes_conf.xml"
-
-### Updates to custom modified Galaxy files
-
-- [ ] The following three Galaxy code files (plus one style file) are replaced with our own custom modified copies in the playbooks. We must check if any of these have been updated since the previous Galaxy release, and if so, we should merge the new changes into our own copies.
-
-* client/src/mvc/history/options-menu.js
-* client/src/components/login/Login.vue
-* lib/galaxy/authnz/psa_authnz.py
-* client/src/style/scss/theme/blue.scss
-
-### Updates to Galaxy package dependencies
-
-- [ ] The requirements for our [default Singularity container](https://github.com/usegalaxy-no/infrastructure-playbook/blob/master/env/common/files/galaxy/mulled/default-container/requirements.txt) is based on the [requirements for Galaxy](https://github.com/galaxyproject/galaxy/tree/master/lib/galaxy/dependencies) itself (especially the [pinned-requirements.txt](https://github.com/galaxyproject/galaxy/blob/master/lib/galaxy/dependencies/pinned-requirements.txt) and [conditional-requirements.txt](https://github.com/galaxyproject/galaxy/blob/master/lib/galaxy/dependencies/conditional-requirements.txt)). If these are out of sync, it can cause problems for some bundled tools. Check if the requirements for the container needs to be updated, and, if so, recreate the default container image also.
-
-
-### Looks and auth
-- [ ] Use the API to check that you now have the correct and expected version  https://(test.)usegalaxy.no/api/version
-- [ ] Check that the styling is correct and looks like this example (example to be updated?)
+### Style and authentication
+- [ ] Check that the NeLS styling is correct, including masthead logo and colors
+- [ ] Check that our custom login page has the correct style and contents
 - [ ] Check that login works with FEIDE
 - [ ] Check that login works with NeLS IdP
-- [ ] Check that logout works correctly and that you have to re-enter your password to log in again.
+- [ ] Check that logout works correctly and that you have to re-enter your password to log in again
 
-### Links 
+### Links and masthead buttons
 - [ ] Check that the Help menu includes a link to "Support" and that this link takes you to the help desk web page at https://elixir.no/helpdesk
-- [ ] Check that the Help menu includes a link to "Terms & conditions" and that this link brings up the terms of service document in the middle panel
-- [ ] Check that the "See the Galaxy release notes" bell-button in the masthead displays the release notes for the Galaxy version that is installed
-- [ ] ~~Check that the “Galaxy Support” link in the Help menu takes you to https://galaxyproject.org/support~~
+- [ ] Check that the Help menu includes a link to "Terms & conditions" and that this link brings up our terms of service document
+- [ ] Galaxy release notes webhook (bullhorn icon)
+- [ ] Training materials webhook (graduation cap icon)
+- [ ] Backend status webhook (heartbeat icon)
+- [ ] Update log webhook (calendar icon)
 
-### Basic operations
-- [ ] Import a file from your local computer into your history
-- [ ] Import a single file from the NeLS Storage (and display it!) 
-- [ ] Import multiple files from the NeLS Storage in a single operation (and display them!)
-- [ ] Export one or more files to the NeLS Storage
-- [ ] Test a history export from Galaxy to NeLS Storage
-- [ ] Test a history import from NeLS Storage to Galaxy
-- [ ] Run a tool that comes bundled with Galaxy (e.g. "replace text")
+### Data Import/export
+- [ ] Import a file from your local computer into your history via the Upload Data button
+- [ ] Check that these uploads are handled by TusD
+- [ ] Import a file directly from the tool form
+- [ ] Import a file by dragging it into Galaxy from an external OS file browser on your computer
+- [ ] Download a single file from your history (download button)
+- [ ] Download a collection from your history as a zip-file  (click on the collection and then press download button). Extract and inspect the files in the zip-archive afterwards
+- [ ] Deferred dataset resolution (Choose "paste/fetch data" in the Upload dialog and paste in a dataset URL, then press the "Settings" cogwheel button and check off "Defer dataset resolution")
+- [ ] **NeLS Storage** 
+  - [ ] Import a single file from the NeLS Storage (and display it!)
+  - [ ] Import multiple files from the NeLS Storage in a single operation (and display them!)
+  - [ ] Export one or more files to the NeLS Storage
+  - [ ] Export one or more files to the NeLS Storage into a new directory
+  - [ ] Export a history from Galaxy to NeLS Storage
+  - [ ] Import a history from NeLS Storage to Galaxy
+- [ ] **Remote storage sources**
+  - [ ] Import a file from an FTP server
+  - [ ] Import a file from a custom SSH server
+  - [ ] Export a file to a custom SSH server
+- [ ] **Histories**
+  - [ ] Import a history from a file (in tgz and/or ROC-format)
+  - [ ] Export a history to a file (in tgz and/or ROC-format)
+  - [ ] Import a history from another Galaxy server via link
+  - [ ] Export a history to another Galaxy server via link
+  - [ ] Archive a history in NeLS Storage and free up the disk
+  - [ ] Import an archived history back into Galaxy
+
+### Tools
+- [ ] Run a tool that comes bundled with Galaxy (e.g. "select first" or "add column")
 - [ ] Run a tool that was installed from a tool shed
-- [ ] Run a tool that uses a reference dataset (e.g. bwa-mem)
-- [ ] Test a workflow
-- [ ] Test a Visualization plugin (if configured), e.g. “Charts” (example of a tool that typically would produce outputs ready for Charts to visualize?)
-- [ ] Test Trackster visualization
-- [ ] Test a Display Application (if configured), e.g. “UCSC Genome Browser”
-- [ ]  History import from another Galaxy server to UseGalaxy.no via link 
-- [ ]  ~~History export from UseGalaxy.no to another Galaxy server via link   (this currently does not work)
-- [ ]  History import from file
-- [ ]  History export to file
-- [ ]  Test the "bug report" function and verify that the email is sent to a sensible recipient (usegalaxy@usegalaxy.no)
-- [ ]  Run a Data Manager (admin page)
+- [ ] Run a tool that uses the default container (it does not have "requirements" in the wrapper)
+- [ ] Run a tool that uses a CVMFS reference dataset from "data.galaxyproject.org" (e.g. Bowtie2)
+- [ ] Run a tool that uses a CVMFS reference dataset from "data.usegalaxy.no" (e.g. RNA STAR with built-in gene model "hg38 with Ensembl annotations")
+- [ ] Run a tool that uses a local reference dataset (e.g. Salmon Quant with built-in index "Transcriptome of Sea Louse from ENSEMBL release 56 with decoys")
+- [ ] Run a tool that writes temp-files to "/tmp" (e.g. FastQC)
+- [ ] Switch Tool Panel mode to sort tools by EDAM operations or topics
+- [ ] Search for tools with the advanced tool search
 
-### New stuff v20.01
-- [ ] workflow documentation. When it has finished, select “Workflow Invocations” from the “User” menu. Choose a workflow invocation and press the V-button to expand it. Press the “View Invocation Report” link below the two colored bars (not the printer icon!).
+### Workflows
+- [ ] Run a workflow (that generates a report)
+- [ ] Run a workflow with conditional workflow steps ([example](https://folk.ntnu.no/kjetikl/galaxy/Galaxy-Workflow-test_conditional_23.ga)) 
+- [ ] **Workflow invocations**
+  - [ ] Inspect the workflow invocation details afterward running a workflow
+  - [ ] Look at the workflow invocation report
+  - [ ] Export a workflow invocation as RO-crate
+- [ ] **Workflow editor** 
+  - [ ] Add comments and drawings
+  - [ ] Use mouse wheel to change zoom level in workflow editor
+- [ ] Import a workflow GA4GH TRS servers
 
-### New stuff v20.09
-- [ ] Allow uploading directly from the tool form
-- [ ] Workflow import from GA4GH TRS servers
+### Histories
+- [ ] Show histories side by side in "multi-view" mode
+- [ ] Drag’n’ drop datasets between histories in the "history multi-view" 
+- [ ] **Bulk history operations**
+  - [ ] Add tags to multiple selected datasets 
+  - [ ] Add tags to a dataset collection 
+  - [ ] Remove tags from multiple selected datasets
+  - [ ] Remove tags from a dataset collection
+  - [ ] Change genome build for multiple selected datasets
+  - [ ] Change genome build for a dataset collection
+  - [ ] Change data type for multiple selected datasets
+  - [ ] Change data type for a dataset collection
 
-### New stuff v21.01
-- [ ] Workflow invocation details. After a workflow has been run, select “Workflow Invocations” from the “User” menu and click on the workflow name to show details.
-- [ ] Workflow author and license metadata annotations in the workflow editor
-- [ ] Workflow "Best Practices". Lint a workflow by selecting "Best Practices" from the cogwheel menu in the workflow editor
-- [ ] Workflow Reports (with visualizations!). Create a report template in the workflow editor and view the report after running the WF.
-- [ ] See the disc usage for users on the Admin page
-- [ ] Galaxy Training Materials button in the masthead
-- [ ] Beta history panel
-
-### New stuff v21.05
-- [ ] Pluggable Data Sources:
-  - [ ] Import a file from a configured FTP server
-  - [ ] Import a file from your personal DropBox account (configure it first under User => Preferences => Manage information)
-  - [ ] Export a history to your personal DropBox account
-  - [ ] Import a history from your personal DropBox account
-
-### New stuff v21.09
-- [ ] Tool Panel Views
-- [ ] News webhook (bell icon in masthead menu)
-
-### NeLS Storage plugin
-- [ ] Import files from NeLS Storage with the "Upload Data" tool ("Choose remote files")
-- [ ] Export files to NeLS Storage using the "__Export datasets__ to remote files source" tool under Send Data
-- [ ] Import history from NeLS Storage (remote file) by clicking on "Import history" on the user's Saved Histories page
-- [ ] Export history to NeLS Storage (remote file) by selecting "Export History to File" from the history options menu (cogwheel button in history panel)
-
-### Old tests that may be relevant again in the future
-- [ ] Click on the “Help” button on “run workflow” page and check if this takes you to a Galaxy page with instructions for the workflow (or to a page that says “Workflow Instructions. ERROR: Unknown NeLS pipeline: xxxx”)
+### Miscellaneous
+- [ ] Test a Visualization plugin (if configured), e.g. "Charts"
+- [ ] Test a Display Application (if configured), e.g. "UCSC Genome Browser"
+- [ ] Test the scratchbook function by clicking the 3x3 grid icon in the top menu and then press the "display" (eye) button on multiple datasets
+- [ ] Send a Bug report by clicking the bug button on a failed job
+- [ ] Send a notification to users (personal and/or broadcast)
 
