@@ -65,7 +65,7 @@ When an upgrade is to be performed, create a new issue in the issue tracker and 
 - [ ] Run a workflow (that generates a report)
 - [ ] Run a workflow with conditional workflow steps ([example](https://folk.ntnu.no/kjetikl/galaxy/Galaxy-Workflow-test_conditional_23.ga)) 
 - [ ] **Workflow invocations**
-  - [ ] Inspect the workflow invocation details afterward running a workflow
+  - [ ] Inspect the workflow invocation details after running a workflow
   - [ ] Look at the workflow invocation report
   - [ ] Export a workflow invocation as RO-crate
 - [ ] **Workflow editor** 
