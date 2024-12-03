@@ -90,6 +90,7 @@ When an upgrade is to be performed, create a new issue in the issue tracker and 
 - [ ] Test a Visualization plugin (if configured), e.g. "Charts"
 - [ ] Test a Display Application (if configured), e.g. "UCSC Genome Browser"
 - [ ] Test the scratchbook function by clicking the 3x3 grid icon in the top menu and then press the "display" (eye) button on multiple datasets
+- [ ] Check that you can edit information on the "Manage information" page under Preferences
 - [ ] Send a Bug report by clicking the bug button on a failed job
 - [ ] Send a notification to users (personal and/or broadcast)
 
